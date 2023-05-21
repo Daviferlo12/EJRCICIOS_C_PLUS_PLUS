@@ -18,10 +18,10 @@ int main() {
   while(flag == true){
     cout << "\n ------------------------------- \n";
     cout << "EJERCICIOS C++: \n";
-    cout << "[1] -- \n";
-    cout << "[2] -- \n";
-    cout << "[3] -- \n";
-    cout << "[4] -- \n";
+    cout << "[1] NUMERO MAYOR,MENOR o IGUAL A 0 \n";
+    cout << "[2] NUMERO PAR O IMPAR \n";
+    cout << "[3] NUMEROS DEL 100 AL -2 \n";
+    cout << "[4] NUMEROS PARES DEL 1 AL 100 \n";
     cout << "[5] -- \n";
     cout << "[6] -- \n";
     cout << "[7] -- \n";
@@ -78,18 +78,53 @@ int main() {
       case 1:{
         system("clear");
 
+        int num;
+        cout << "-------- Numero menor, mayor o igual a 0 -------\n";
+        cout << "Ingresa el numero: ";
+        cin >> num;
+
+        if(num < 0){
+          cout << "El numero es menos a 0 \n";
+        }else if(num > 0){
+          cout << "El numero es mayor a 0 \n";
+        }else{
+          cout << "El numero es igual a 0 \n";
+        }
+        
         
       }break;
       case 2:{
         system("clear");
         
+        int num;
+        cout << "-------- Numero par o impar -------\n";
+        cout << "Ingresa el numero: ";
+        cin >> num;
+
+        if(num % 2 != 0){
+          cout << "El numero impar \n";
+        }else{
+          cout << "El numero es par \n";
+        }
       }break;
       case 3:{
         system("clear");
-        
+
+        cout << "------- NUMEROS DEL 100 AL -2 ------- \n";
+        for(int i = 101; i >= -2; i--){
+          cout << "[*] ==>" << i << "\n";
+        }
       }break;
       case 4:{
         system("clear");
+        cout << "------- NUMEROS PARES DEL 1 AL 100 ------- \n";
+        
+        for(int i = 0; i <= 100; i++){
+          
+          if(i % 2 == 0){
+            cout << "[*] ==>" << i << "\n";
+          }
+        }
         
       }break;
       case 5:{
