@@ -113,6 +113,7 @@ int main() {
         }else{
           cout << "El numero es par \n";
         }
+        
       }break;
       case 3:{
         system("clear");
