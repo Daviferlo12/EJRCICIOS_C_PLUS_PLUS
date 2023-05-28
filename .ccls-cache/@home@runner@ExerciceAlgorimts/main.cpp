@@ -48,15 +48,15 @@ void options(){
     cout << "[38] 3 EDADES Y SU PROMERDIO \n";
     cout << "[39] DE 10 NUMEROS, IMPRIMER POSITIVOS \n";
     cout << "[40] ENCUESTA 3 COLORES \n";
-    cout << "[41] -- \n";
-    cout << "[42] -- \n";
-    cout << "[43] -- \n";
-    cout << "[44] -- \n";
-    cout << "[45] -- \n";
-    cout << "[46] -- \n";
-    cout << "[47] -- \n";
-    cout << "[48] -- \n";
-    cout << "[49] -- \n";
+    cout << "[41] PROMEDIO SEGUN EL SEXO \n";
+    cout << "[42] PROMEDIO DE CARROS EN UN PEAJE ---- \n";
+    cout << "[43] MCD DE DOS NUMEROS \n";
+    cout << "[44] DE PESOS A DOLARES \n";
+    cout << "[45] DE DOLARES A PESOS \n";
+    cout << "[46] DE EUROS A DOLARES \n";
+    cout << "[47] DE DOLARES A EUROS \n";
+    cout << "[48] 2 DEPORTES Y SUS IMPLEMENTOS \n";
+    cout << "[49] DE LIBRAS A KILOGRAMOS \n";
     cout << "[50] SUELDO MENSUAL DE UN EMPLEADO \n";
     cout << "\n -------------------------------- \n";
     cout << "\n[51] SALIR \n";
@@ -149,7 +149,7 @@ int main() {
       	
       	cout << "Ingrese su nombre: \n";
       	//cin >> nombre;
-      	getline(cin, nombre);
+      	std::getline(cin, nombre);
         
       	cout << "Ingrese su facultad: ";
       	//cin >> facultad;
@@ -1066,8 +1066,8 @@ int main() {
       case 40:{
         system("clear");
         // Global variables
-        int num, rojo = 0, verde = 0, azul = 0, non = 0;
-        
+        float rojo = 0, verde = 0, azul = 0, non = 0;
+        int num;
         //porcetajes
         float porc_rojo, porc_verde, porc_azul, porc_non;
         
@@ -1102,9 +1102,6 @@ int main() {
           }
         }
 
-        cout << "-" << rojo << endl;
-        cout << "-" << rojo / 10 << endl;
-
         porc_rojo = (rojo / 10) * 100;
         porc_verde = (verde / 10) * 100;
         porc_azul = (azul / 10) * 100;
@@ -1115,9 +1112,51 @@ int main() {
         cout << "[*] AZUL: " <<  porc_azul << "% \n";
         cout << "[*] NINGUNO: " <<  porc_non<< "% \n";
         system("sleep 3s");
+        
       }break;
       case 41:{
         system("clear");
+        //contadores
+        int M = 0, F = 0, points_m = 0, points_f = 0, num, i = 0;
+        int sex, points;
+
+        cout << "Cuentas personas realizaron el examen ? : ";
+        cin >> num;
+
+        while(i < num){
+          system("clear");
+          cout << "\n------------------------\n";
+          cout << "Persona No."<<i + 1<<":";
+          cout << "\n------------------------\n";
+          cout << "[1] Masculino \n";
+          cout << "[2] Femenino \n";
+          cout << "SEXO: ";
+          cin >> sex;
+          cout << "\n------------------------\n";
+          cout << "PUNTOS OBTENIDOS: ";
+          cin >> points;
+          cout << "\n------------------------\n";
+                    
+          switch(sex){
+            case 1:
+              M++;
+              points_m += points;
+              break;
+            case 2:
+              F++;
+              points_f += points;
+              break;
+            default:
+              i--;
+              break;
+          }
+
+          i++;
+        }
+        cout << "- PROMEDIO DE PUNTOS: \n";
+        cout << "- HOMBRES: "<< points_m / M << endl;
+        cout << "- MUJERES: "<< points_f / F << endl;
+        system("sleep 3s");
         
       }break;
       case 42:{
@@ -1127,31 +1166,147 @@ int main() {
       case 43:{
         system("clear");
 
+        int num_1, num_2, MCD;
+        cout << "Ingrese el primer numero: ";
+        cin >> num_1;
+        cout << "Ingrese el segundo numero: ";
+        cin >> num_2;
+        int temp_1 = num_1, temp_2 = num_2;
+
+
+        // METODO EUCLIDES
+        while (num_2 != 0) {
+          int temp = num_2;
+          num_2 = num_1 % num_2;
+          num_1 = temp;
+        }
+        
+        MCD = num_1;
+        
+        cout << "EL MCD DE "<< temp_1 << " y " << temp_2 << " es: " << MCD << endl;
+        system("sleep 3s");
         
       }break;
       case 44:{
         system("clear");
+
+        float  pesos, dollars;
+
+        cout << "Cuantos pesos quiere convertir ? : ";
+        cin >> pesos;
+        
+        dollars = pesos * 0.00022;    
+
+        cout << "[*] " << pesos << " pesos es igual a $"<< dollars << "\n";
+        system("sleep 3s");
         
       }break;
       case 45:{
         system("clear");
+
+        float  pesos, dollars;
+
+        cout << "Cuantos dolares quiere convertir ? : ";
+        cin >> dollars;
+        
+ 
+        pesos = dollars*4503.48;   
+
+        cout << "[*] $" << dollars << " es igual a "<< pesos << " pesos \n";
+        system("sleep 3s");
         
       }break;
       case 46:{
         system("clear");
+
+        
+        float  euros, dollars;
+
+        cout << "Cuantos euros quiere convertir ? : ";
+        cin >> euros;
+        
+ 
+        dollars = euros*1.07;   
+
+        cout << "[*] " << euros << " euros es igual a $"<< dollars << "\n";
+        system("sleep 3s");
         
       }break;
       case 47:{
         system("clear");
+
+        
+        float  euros, dollars;
+
+        cout << "Cuantos dolares quiere convertir ? : ";
+        cin >> dollars;
+        
+ 
+        euros = dollars*0.93;   
+
+        cout << "[*] $" << dollars << " es igual a "<< euros << " euros \n";
+        system("sleep 3s");
         
       }break;
       case 48:{
         system("clear");
+        int option, option_2;
+        string sports[6] = {"Futbol", "Basketball", "Rugby", "Tenis", "Pingpong", "BoleyBall"};
+        cout << "DEPORTES DISPONIBLES: \n";
         
+        for(int i = 0; i < 6; i++){
+          cout << "["<< i +1 <<"] "<< sports[i] << " \n";
+        }
+
+        cout << "\nIngresa 2 deportes que te interesen... \n";
+        cout << "Primer Deporte: ";
+        cin >> option;
+        cout << "Segundo Deporte: ";
+        cin >> option_2;
+
+        if(option == 1){
+          cout << "\n- PARA "<< sports[option - 1] <<" ==> MEDIAS, PANTALONETA, GUAYOS.... \n";
+        }else if(option == 2){
+          cout << "\n- PARA "<< sports[option - 1] <<" ==> ROPA D, PANTALONETA, ZAPATILLAS.... \n";
+        }else if(option == 3){
+          cout << "\n- PARA "<< sports[option - 1] <<" ==> ROPA D, PANTALONETA, RODILLERAS, CODERAS.... \n";
+        }else if(option == 4){
+          cout << "\n- PARA "<< sports[option - 1] <<" ==> RAQUETA, PANTALONETA, ZAPATILLAS.... \n";
+        }else if(option == 5){
+          cout << "\n- PARA "<< sports[option - 1] <<" ==>PALETA, PANTALONETA, ZAPATILLAS.... \n";
+        }else if(option == 6){
+          cout << "\n- PARA "<< sports[option - 1]<<" ==> MEDIAS, PANTALONETA, BALON, AGUA.... \n";
+        }
+
+        if(option_2 == 1){
+          cout << "\n- PARA "<< sports[option_2 - 1] <<" ==> MEDIAS, PANTALONETA, GUAYOS.... \n";
+        }else if(option_2 == 2){
+          cout << "\n- PARA "<< sports[option_2 - 1] <<" ==> ROPA D, PANTALONETA, ZAPATILLAS.... \n";
+        }else if(option_2 == 3){
+          cout << "\n- PARA "<< sports[option_2 - 1] <<" ==> ROPA D, PANTALONETA, RODILLERAS, CODERAS.... \n";
+        }else if(option_2 == 4){
+          cout << "\n- PARA "<< sports[option_2 - 1] <<" ==> RAQUETA, PANTALONETA, ZAPATILLAS.... \n";
+        }else if(option_2 == 5){
+          cout << "\n- PARA "<< sports[option_2 - 1] <<" ==> PALETA, PANTALONETA, ZAPATILLAS.... \n";
+        }else if(option_2 == 6){
+          cout << "\n- PARA "<< sports[option_2 - 1]<<" ==> MEDIAS, PANTALONETA, BALON, AGUA.... \n";
+        }
+
+        system("sleep 3s");
       }break;
       case 49:{
         system("clear");
-        
+
+        float libras, Kilogramos;
+
+        cout << "Ingrese la libras: ";
+        cin >> libras;
+
+        Kilogramos = libras*0.454;
+
+        cout << "[*]"<< libras <<" lb es igual a "<< Kilogramos << " Kg \n";
+        system("sleep 3s");
+          
       }break;
       case 50:{
         
