@@ -47,7 +47,7 @@ void options(){
     cout << "[37] FUNCION y=5/3x + 3/2x + 8 \n";
     cout << "[38] 3 EDADES Y SU PROMERDIO \n";
     cout << "[39] DE 10 NUMEROS, IMPRIMER POSITIVOS \n";
-    cout << "[40] -- \n";
+    cout << "[40] ENCUESTA 3 COLORES \n";
     cout << "[41] -- \n";
     cout << "[42] -- \n";
     cout << "[43] -- \n";
@@ -1065,9 +1065,56 @@ int main() {
       }break;
       case 40:{
         system("clear");
+        // Global variables
+        int num, rojo = 0, verde = 0, azul = 0, non = 0;
+        
+        //porcetajes
+        float porc_rojo, porc_verde, porc_azul, porc_non;
+        
+        for(int i = 0; i < 10; i++){
+          system("clear");
+          cout << "Persona No."<< i + 1 << ": \n";
+          cout << "Que color prefiere ? \n";
+          cout << "[1] ROJO \n";
+          cout << "[2] VERDE \n";
+          cout << "[3] AZUL \n";
+          cout << "[OTHER] NONE \n";
+          cout << "\nIngrese el color: ";
+          cin >> num;
 
-        
-        
+          switch(num){
+            case 1:
+              rojo ++;
+              cout << rojo << "---";
+              break;
+
+            case 2:
+              verde++;
+              break;
+
+            case 3:
+              azul++;
+              break;
+
+            default:
+              non++;
+              break;
+          }
+        }
+
+        cout << "-" << rojo << endl;
+        cout << "-" << rojo / 10 << endl;
+
+        porc_rojo = (rojo / 10) * 100;
+        porc_verde = (verde / 10) * 100;
+        porc_azul = (azul / 10) * 100;
+        porc_non = (non / 10) * 100;
+
+        cout << "\n[*] ROJO: " <<  porc_rojo << "% \n";
+        cout << "[*] VERDE: " <<  porc_verde << "% \n";
+        cout << "[*] AZUL: " <<  porc_azul << "% \n";
+        cout << "[*] NINGUNO: " <<  porc_non<< "% \n";
+        system("sleep 3s");
       }break;
       case 41:{
         system("clear");
