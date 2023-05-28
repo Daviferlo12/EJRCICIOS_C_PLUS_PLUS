@@ -932,6 +932,40 @@ int main() {
       }break;
       case 35:{
         system("clear");
+
+      	string materia;
+      	float nota1, nota2, nota3;
+      	double notaF;	
+  
+        cout << "Ingrese la materia: ";
+        cin >>materia; 
+      
+        cout << "Ingrese la primera nota de " << materia<<": ";
+        cin >> nota1;
+        
+        cout << "Ingrese la segunda nota de " << materia<<": ";
+        cin >> nota2;
+        
+        cout << "Ingrese la tercera nota de " << materia<<": ";
+        cin >> nota3;
+        
+        if((nota1 >= 1 && nota1 <= 5) && (nota2 >= 1 && nota2 <= 5) && (nota3 >= 1 && nota3 <= 5)){
+          
+          notaF = ((nota1 * 0.3) + (nota2 * 0.3) + (nota3 * 0.4));
+        
+          if(notaF < 3.0){
+        
+            cout<< "EN"<< materia << ", EL ESTUDIANTE REPROBO LA MATERIA CON "<<notaF << "\n";
+            system("sleep 3s");
+        
+          }else if(notaF >= 3.0 && notaF <= 5.0){
+        
+            cout<< "EN "<< materia <<", EL ESTUDIANTE APROBO LA MATERIA CON "<<notaF << "\n";
+            system("sleep 3s");
+        
+          }    
+        }
+
         
       }break;
       case 36:{
