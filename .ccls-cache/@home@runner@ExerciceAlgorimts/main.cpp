@@ -42,11 +42,11 @@ void options(){
     cout << "[32] TEOREMA DE PITAGORAS \n";
     cout << "[33] DE FAHRENHEIT A CERSIUS \n";
     cout << "[34] DE CELSIUS A FAHRENHEIT \n";
-    cout << "[35] NOTAS ESTUDIANTES \n";
-    cout << "[36] -- \n";
-    cout << "[37] -- \n";
-    cout << "[38] -- \n";
-    cout << "[39] -- \n";
+    cout << "[35] 3 NOTAS ESTUDIANTES \n";
+    cout << "[36] 4 NOTAS DE NOTAS ESTUDIANES \n";
+    cout << "[37] FUNCION y=5/3x + 3/2x + 8 \n";
+    cout << "[38] 3 EDADES Y SU PROMERDIO \n";
+    cout << "[39] DE 10 NUMEROS, IMPRIMER POSITIVOS \n";
     cout << "[40] -- \n";
     cout << "[41] -- \n";
     cout << "[42] -- \n";
@@ -970,22 +970,103 @@ int main() {
       }break;
       case 36:{
         system("clear");
+
+        string materia;
+      	float nota1, nota2, nota3, nota4;
+      	double notaF;	
+  
+        cout << "Ingrese la materia: ";
+        cin >>materia; 
+      
+        cout << "Ingrese la primera nota de " << materia<<": ";
+        cin >> nota1;
+        
+        cout << "Ingrese la segunda nota de " << materia<<": ";
+        cin >> nota2;
+        
+        cout << "Ingrese la tercera nota de " << materia<<": ";
+        cin >> nota3;
+
+        cout << "Ingrese la cuarta nota de " << materia<<": ";
+        cin >> nota3;
+        
+        if((nota1 >= 1 && nota1 <= 5) && (nota2 >= 1 && nota2 <= 5) && (nota3 >= 1 && nota3 <= 5) && (nota4 >= 1 && nota4 <= 5)){
+          
+          notaF = ((nota1 * 0.2) + (nota2 * 0.2) + (nota3 * 0.1) + (nota4 * 0.5));
+        
+          if(notaF < 3.0){
+        
+            cout<< "EN"<< materia << ", EL ESTUDIANTE REPROBO LA MATERIA CON "<<notaF << "\n";
+            system("sleep 3s");
+        
+          }else if(notaF >= 3.0 && notaF <= 5.0){
+        
+            cout<< "EN "<< materia <<", EL ESTUDIANTE APROBO LA MATERIA CON "<<notaF << "\n";
+            system("sleep 3s");
+        
+          }    
+        }
         
       }break;
       case 37:{
         system("clear");
-        
+        float y;
+        cout << "ECUACION : y=5/3x + 3/2x + 8 cuando x–> -5…20 (rango de -5 hasta 20) \n";
+        cout << "\n -------------------------------------- \n";
+        for(int x = -5; x <= 20; x++){
+          y = ((5/3) * x) + (((3/2) * x) + 8 );
+          cout << "Si x = "<< x << ", y = " << y << "\n";
+        }
+        cout << "\n -------------------------------------- \n";
+        system("sleep 3s");
       }break;
       case 38:{
         system("clear");
+        int edades[3], edad, tam = sizeof(edades) / sizeof(edades[0]);
+        float prom = 0;
+
+        for(int i = 0; i < tam; i++){
+          cout << "Ingresa la edad No." << i + 1 << ": ";
+          cin >> edad;
+          edades[i] = edad;
+        }
+
+        cout << "Edades introducidas: \n";
+        
+        for(int j = 0; j < tam; j++){
+          cout << "[*] " << edades[j] << "\n";
+          prom += edades[j];
+        }
+        cout << "PROMEDIO: " << prom / 3 << "\n";
+        system("sleep 3s");
+        
         
       }break;
       case 39:{
         system("clear");
-        
+        int nums[10], num;
+
+        for(int i = 0; i < 10; i++){
+          cout << "Ingrese el numero No." << i + 1 <<": ";
+          cin >> num;
+          nums[i] = num;
+        }
+
+        cout << "\nSegun los numeros ingresados... \n";
+        cout << "Los positivos son: \n";
+        for(int j = 0; j < 10; j++){
+          
+          if(nums[j] >= 0){
+            cout << "[*] ==> "<< nums[j] << "\n";
+          }
+          
+        }
+        system("sleep 3s");
       }break;
       case 40:{
         system("clear");
+
+        
         
       }break;
       case 41:{
