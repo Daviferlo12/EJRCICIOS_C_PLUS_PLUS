@@ -148,15 +148,16 @@ int main() {
       	
       	
       	cout << "Ingrese su nombre: \n";
-      	//cin >> nombre;
+      	cin.ignore();
       	std::getline(cin, nombre);
         
       	cout << "Ingrese su facultad: ";
-      	//cin >> facultad;
+      	cin.ignore();
       	getline(cin, facultad);
       	
       	cout << "Ingrese el semestre: ";
-      	getline(cin, semestre);
+      	cin.ignore();
+        getline(cin, semestre);
       	
       	do{
       		cout <<"\n ++++++++++++++++++++++++++ \n";
