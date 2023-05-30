@@ -201,16 +201,16 @@ int main() {
       				system("clear");
       				
       				cout << "Ingrese su nombre: ";
-      				// cin >> nombre;
+      				cin.ignore();
               getline(cin,nombre);
               
       				cout << "Ingrese su facultad: ";
-      				// cin >> facultad;
+      				cin.ignore();
               getline(cin,facultad);
               
       				
       				cout << "Ingrese el semestre: ";
-      				// cin >> semestre;
+      				cin.ignore();
               getline(cin,semestre);
               
       				
