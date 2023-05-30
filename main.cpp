@@ -1162,7 +1162,80 @@ int main() {
       }break;
       case 42:{
         system("clear");
-        
+
+        int car_type, persons_p, persons_b, persons_o, ask = 1;
+				bool flag_1 = true;
+				
+				//CONTADORES
+				int person_car = 0, person_bus = 0, person_other = 0, bus = 0, car = 0, other = 0;
+				
+				while(flag_1 == true){
+          system("clear");
+					cout << "\nPREGUNTA No." << ask << endl;
+					cout << "\nBuen dia, que tipo de vehiculo ingreso ? \n";
+					cout << "[1] CARRO \n";
+					cout << "[2] BUS \n";
+					cout << "[3] OTRO VEHICULO \n";
+					cout << "\n ----------------------------- \n";
+					cout << "[4] SALIR \n";
+					cout << "\n ----------------------------- \n";
+					
+					cout << "Ingrese la opcion: ";
+					cin >> car_type;
+					
+					switch(car_type){
+						case 1:{
+							car++;
+							cout << "¿ Cuentas personas iban en el carro ? : ";
+							cin >> persons_p;
+							
+							person_car += persons_p;
+														
+							cout << "\n Gracias, Continue... \n";
+						}break;
+						case 2:{
+							bus++;
+							cout << "¿ Cuentas personas iban en el bus ?: ";
+							cin >> persons_b;
+							
+							person_bus += persons_b;
+							
+							cout << "\n Gracias, Continue... \n";
+						}break;
+						case 3:{
+							other++;
+							cout << "¿ Cuentas personas iban en el vehiculo ?: ";
+							cin >> persons_o;
+							
+							person_other += persons_o;
+							
+							cout << "\n Gracias, Continue... \n";
+						}break;
+						case 4:{
+							cout << "[*] PROGRAMA TERMINADO... \n";
+							flag_1 = false;
+							system("pause");
+						}break;
+						default:{
+							cout << "[*] ERROR: OPCION NO VALIDA";
+						}break;
+					}
+
+          ask++;
+				}
+				
+				cout << "\n ------------------------------------------------ \n";
+				cout << "Hoy pasaron un total de " << car << " carros con un total de "<< person_car << " personas... \n";
+				cout << "Hoy pasaron un total de " << bus << " buses con un total de "<< person_bus << " personas... \n";
+				cout << "Hoy pasaron un total de " << other << " vehiculos diferentes con un total de "<< person_other << " personas... \n";
+				cout << "\n ------------------------------------------------ \n";
+				cout << "PROMEDIO DE PERSONAS POR CARRO: " << person_car / car << "\n";
+				cout << "PROMEDIO DE PERSONAS POR BUS: " << person_bus / bus << "\n";
+				cout << "PROMEDIO DE PERSONAS POR OTROS VEHICULOS: " << person_other / other << "\n";
+				cout << "\n ------------------------------------------------ \n";
+				
+				system("sleep 3s");
+
       }break;
       case 43:{
         system("clear");
